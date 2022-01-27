@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: cursive;
+}
+.container {
+    width: 960px;
+    margin: 0px auto;
+}
+.navbar {
+    /* height: 75px; */
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    margin-bottom: 30px;
+}
+.navbar div {
+    display: flex;
+    align-items: center;
+}
+#signout {
+    /* margin-right: 10px; */
+    font-size: large;
+    color: white;
+    width: 100px;
+    height: 35px;
+    background-color: rgb(100, 177, 207);
+}
+h1 a {
+    text-decoration: none;
+    color: white;
+    /* padding-left: 10px; */
+}
+#usercircle {
+    background-color: rebeccapurple;
+    width: 100%;
+    height: 75px;
+}
+.list {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}
+ul {
+    display: flex;
+    list-style: none;
+    /* padding-right: 100px; */
+    text-align: left;
+}
+li {
+    margin: 0px 5px;
+}
+.profile {
+    width: 550px;
+    border: 2px solid grey;
+    font-size: larger;
+}
+.usercircle {
+    margin: 35px 15px;
+    height: 75px;
+    border: 5px solid lightgrey;
+    border-radius: 50%;
+}
+#name {
+    margin-top: 45px;
+}
+#name, p{
+    padding: 5px 20px;
+}
+.cog, .map-ping {
+    height: 15px;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+#reqnum {
+    color: black;
+    border-radius: 50%;
+    background-color: lightgrey;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px;
+    text-align: center;
+}
+#fivehundred {
+    color: black;
+    border-radius: 50%;
+    background-color: lightgrey;
+    margin-right: 5px;
+    display: inline-block;
+    width: 45px;
+    text-align: center;
+}
+#educationhead {
+    margin-top: 30px;
+    background-color: grey;
+    width: 550px;
+    border: 2px solid grey;
+    color: white;
+}
+.accept, .decline {
+    float: right;
+    margin: 0px 2px;
+}
+h2 {
+    padding-left: 20px;
+}
+h3 {
+    margin: 5px 0px;
+    padding-left: 20px;
+    color: grey;
+}
+.education {
+    border: 2px solid grey;
+    width: 550px;
+}
+.connectionimg, .accept, .decline {
+    width: 35px;
+    vertical-align: middle;
+}
+#requestnumber, #connectionsnumber {
+    color: white;
+    background-color: grey;
+    border: 2px solid grey;
+    width: 208px;
+}
+.requests, .connections {
+    border: 2px solid grey;
+    width: 250px;
+}
+.connections {
+    margin-top: 25px;
+}
+.viewmore {
+    border: 2px solid grey;
+    width: 215px;
+    padding: 5px 15px 5px 20px;
+}
+.connectionimg {
+    padding: 0px 5px;
+}
+.connection {
+    display: flex;
+}
+#main {
+    display: flex;
+    justify-content: space-between;
+}
+

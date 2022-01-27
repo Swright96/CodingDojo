@@ -1,0 +1,24 @@
+img {
+    height: 200px;
+    display: inline;
+    margin: 5px;
+}
+.container {
+    text-align: center;
+    padding: 20px;
+}
+.bluebox {
+    background-color: lightcyan;
+    width: 650px;
+    margin: 10px;
+}
+.pinkbox {
+    background-color: pink;
+    width: 650px;
+    margin: 10px;
+}
+.whitebox {
+    background-color: rebeccapurple;
+    width: 650px;
+    margin: 10px;
+}

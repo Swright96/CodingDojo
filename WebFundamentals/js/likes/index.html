@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="navbar">
+            <h2>Network</h2>
+        </div>
+        <h1>Your Feed</h1>
+        <div id="main">
+            <div id="avatarbox">
+                <img src="img/user-circle.png" alt="Default User Profile img">
+                <a id="avatarlink" href="#">Add an Avatar</a>
+                <h3>James Doe</h3>
+            </div>
+            <div id="posts">
+                <div class="postbox">
+                    <div class="postname">
+                        <h4 id="neil">Neil M</h4>
+                        <div class="likebox">
+                            <p class="likesnum" id="likesnumneil">9 Like(s)</p>
+                            <button onclick="addOneNeil(this)">Like</button>
+                        </div>
+                    </div>
+                    <div class="bodypost">
+                        <p>I just set up this new Discord bot, let me know what you all think</p><a href="#">link</a>
+                    </div>
+                </div>
+                <div class="postbox">
+                    <div class="postname">
+                        <h4 id="nichole">Nichole K</h4>
+                        <div class="likebox">
+                            <p class="likesnum" id="nicholelikes">12 like(s)</p>
+                            <button onclick="addOneNichole(this)">Like</button>
+                        </div>
+                    </div>
+                    <div class="bodypost">
+                        <p>Just finished my <a href="#">next comic</a>, check it out</p>
+                    </div>
+                </div>
+                <div class="postbox">
+                    <div class="postname">
+                        <h4 id="jim">Jim R</h4>
+                        <div class="likebox">
+                            <p class="likesnum" id="jimlikes">9 like(s)</p>
+                            <button onclick="addOneJim(this)">Like</button>
+                        </div>
+                    </div>
+                    <div class="bodypost">
+                        <p>I can't stop listening to this <a href="#">new album</a>. Who else is liking it?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

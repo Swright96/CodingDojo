@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Weather</title>
+</head>
+
+<body>
+    <!-- big box -->
+    <div class="container">
+
+        <!-- navigation bar -->
+        <div class="navbar">
+            <div id="nav-dojoweather">
+                <h1>DojoWeather</h1>
+            </div>
+            <div class="cities">
+                <a href="#" onclick="alert('Weather report loading...')">Burbank</a>
+                <a href="#" onclick="alert('Weather report loading...')">Chicago</a>
+                <a href="#" onclick="alert('Weather report loading...')">Dallas</a>
+            </div>
+        </div>
+
+        <!-- city and temperature head -->
+        <div class="header">
+            <div id="city-head">
+                <h3>San Jose</h3>
+            </div>
+            <div id="temperature">
+                <p>show temperature in
+                    <select onchange="convertToFarenheit(this)" name="temperature">
+                        <option>°C</option>
+                        <option>°F</option>
+                    </select>
+                </p>
+            </div>
+        </div>
+
+        <div id="bottom-line-division"></div>
+
+        <!-- days and their temperature -->
+        <div class="weather-days">
+            <div id="today">
+                <div class="weather-day-head">
+                    <h2>Today</h2>
+                </div>
+                <div class="weather-icon">
+                    <img src="assets/some_clouds.png" alt="clouds with rain">
+                </div>
+                <div class="weather-desc">
+                    <p>some rain</p>
+                </div>
+                <div class="weather-number">
+                    <div class="weather-high">
+                        <h5 id="today-weather-high">24°</h5>
+                    </div>
+                    <div class="weather-low" id="today-weather-low">
+                        <h5>18°</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="tomorrow">
+                <div class="weather-day-head">
+                    <h2>Tomorrow</h2>
+                </div>
+                <div class="weather-icon">
+                    <img src="assets/some_sun.png" alt="sunny picture">
+                </div>
+                <div class="weather-desc">
+                    <p>some sun</p>
+                </div>
+                <div class="weather-number">
+                    <div class="weather-high" id="tomorrow-weather-high">
+                        <h5>27°</h5>
+                    </div>
+                    <div class="weather-low" id="tomorrow-weather-low">
+                        <h5>19°</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="friday">
+                <div class="weather-day-head">
+                    <h2>Friday</h2>
+                </div>
+                <div class="weather-icon">
+                    <img src="assets/some_clouds.png" alt="grey clouds">
+                </div>
+                <div class="weather-desc">
+                    <p>some clouds</p>
+                </div>
+                <div class="weather-number">
+                    <div class="weather-high" id="friday-weather-high">
+                        <h5>21°</h5>
+                    </div>
+                    <div class="weather-low" id="friday-weather-low">
+                        <h5>16°</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="saturday">
+                <div class="weather-day-head">
+                    <h2>Saturday</h2>
+                </div>
+                <div class="weather-icon">
+                    <img src="assets/some_sun.png" alt="sun picture">
+                </div>
+                <div class="weather-desc">
+                    <p>some sun</p>
+                </div>
+                <div class="weather-number">
+                    <div class="weather-high" id="saturday-weather-high">
+                        <h5>26°</h5>
+                    </div>
+                    <div class="weather-low" id="saturday-weather-low">
+                        <h5>21°</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- cookie alert -->
+        <div class="cookie-box">
+            <div id="cookie-img">
+                <img src="assets/cookie.png" alt="cookie">
+            </div>
+            <div id="cookie-bulk">
+                <h3 id="cookie-head">Stop! Cookie time</h3>
+                <p id="cookie-paragraph">We use cookies (sadly not the edible ones) to personalize content and ads, to
+                    provide social media
+                    features and to analyse our traffic. <a href="#">Read more...</a></p>
+            </div>
+            <button onclick="acceptCookies()">I Accept</button>
+        </div>
+    </div>
+</body>
+
+</html>
