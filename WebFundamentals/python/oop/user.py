@@ -1,33 +1,45 @@
 class User :
 
-    def __init__(self, name, email_address):
+    def __init__(self, name, email_address, checking, savings):
         self.name = name
         self.email = email_address
-        self.account_balance = 0
+        self.balance = 0
+        self.account = BankAccount(int_rate=0.01, balance=0)
+        self.checking = checking
+        self.savings = savings
 
     def make_deposit(self, amount):
-        self.account_balance += amount
+        self.account.balance += amount
         print(f"Deposit of ${amount} to {self.name} successful!")
         return self
 
     def make_widthdrawl(self, amount):
-        self.account_balance -= amount
+        self.account.balance -= amount
         
-        if self.account_balance < amount:
-            print(f"Sorry {self.name}, you have a lack of funds available. Current balance: ${self.account_balance}")
+        if self.account.balance < amount:
+            print(f"Sorry {self.name}, you have a lack of funds available. Current balance: ${self.account.balance}")
         else:
             print(f"Widthdrawl of ${amount} from {self.name} successful!")
         return self
 
     def display_user_balance(self):
-        print(f"User: {self.name}, Balance: $ {self.account_balance}")
+        print(f"User: {self.name}, Balance: $ {self.account.balance}")
         return self
 
     def transfer_money(self, user, amount):
-        self.account_balance -= amount
-        user.account_balance += amount
+        self.account.balance -= amount
+        user.account.balance += amount
         print(f"{self.name} transfered ${amount} to {user.name}")
         return self
+
+class BankAccount:
+    accounts = []
+    
+    def __init__(self, int_rate, balance): 
+        self.int_rate = int_rate
+        self.balance = balance
+        BankAccount.accounts.append(self)
+
 
 guido = User("Guido Montoya III", "guidomontoya@gmail.com")
 monty = User("Monty Python", "montythepython@gmail.com")
