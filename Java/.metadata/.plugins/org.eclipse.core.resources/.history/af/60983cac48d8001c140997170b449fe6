@@ -1,0 +1,5 @@
+package com.codingdojo.beltexam.repositories;
+
+public class TvRepository {
+
+}

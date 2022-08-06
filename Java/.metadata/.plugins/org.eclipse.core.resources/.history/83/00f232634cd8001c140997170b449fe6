@@ -1,0 +1,122 @@
+package com.codingdojo.beltexam.controllers;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
+import com.codingdojo.beltexam.models.Tv;
+import com.codingdojo.beltexam.models.User;
+import com.codingdojo.beltexam.services.LoginService;
+import com.codingdojo.beltexam.services.TvService;
+import com.codingdojo.beltexam.services.UserService;
+
+
+
+
+@Controller
+public class TvController {
+	
+	@Autowired
+	TvService tvService;
+	@Autowired
+	UserService userService;
+	@Autowired
+	LoginService loginService;
+	
+	@GetMapping("/dashboard")
+	public String shows(@ModelAttribute("newShow")Tv tv, Model model, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/logout";
+		}
+		Long userId = (Long) session.getAttribute("userId");
+		model.addAttribute("user", userService.findById(userId));
+		List<Tv> shows = tvService.allTvs();
+		model.addAttribute("shows", shows);
+		return "dashboard.jsp";
+	}
+	
+	@GetMapping("/shows/new")
+	public String newShow(@ModelAttribute("newBook") Tv tv, Model model, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/logout";
+		}
+		Long userId = (Long) session.getAttribute("userId");
+		model.addAttribute("user", userService.findById(userId));
+		List<Tv> shows = tvService.allTvs();
+		model.addAttribute("shows", shows);
+		return "newshow.jsp";
+	}
+	
+	@GetMapping("/books/{id}")
+	public String showBook(@PathVariable("id")Long id, Model model, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/logout";
+		}
+		Long userId = (Long) session.getAttribute("userId");
+		model.addAttribute("user", userService.findById(userId));
+		Tv shows = tvService.findTv(id);
+		User user = userService.findById(id);
+		model.addAttribute("newShow", shows);
+		model.addAttribute("newUser", user);
+		return "show.jsp";
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String editShow(@PathVariable("id") Long id, Model model, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/logout";
+		}
+		Long userId = (Long) session.getAttribute("userId");
+		model.addAttribute("user", userService.findById(userId));
+		Tv shows = tvService.findTv(id);
+		model.addAttribute("newShow", shows);
+		return "edit.jsp";
+	}
+	
+	@PostMapping("/shows/new")
+	public String createTv(@Valid @ModelAttribute("newShow") Tv tv, Model model, BindingResult results) {
+		if(results.hasErrors()) {
+			List<Tv> shows = tvService.allTvs();
+			model.addAttribute("shows", shows);
+			return "redirect:/shows/new";
+		}
+		else {
+			tvService.createTv(tv);
+			return "redirect:/dashboard";
+		}
+		
+	}
+	
+	@PutMapping("/edit/{id}")
+	public String update(@PathVariable("id") Long id, Model model, @Valid @ModelAttribute("newExpense") Tv tv, BindingResult result) {
+		if (result.hasErrors()) {
+			return "redirect:/edit/{id}";
+		}
+		else {
+			tvService.updateTv(tv);
+			return "redirect:/expenses";
+		}
+	}
+	@DeleteMapping("/destroy/{id}")
+	public String destroy(@PathVariable("id") Long id) {
+		tvService.deleteTv(id);
+		return "redirect:/expenses";
+	}
+	
+	
+	
+	
+	
+}

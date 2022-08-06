@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.codingdojo.authentication&apos; to &apos;com.codingdojo.bookclub&apos;&#x0D;&#x0A;- Original project: &apos;bookclub&apos;&#x0D;&#x0A;- Original element: &apos;bookclub/src/main/java/com.codingdojo.authentication&apos;&#x0D;&#x0A;- Renamed element: &apos;bookclub/src/main/java/com.codingdojo.bookclub&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings&#x0D;&#x0A;- Rename subpackages of the package" description="Rename package &apos;com.codingdojo.authentication&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.codingdojo.authentication" name="com.codingdojo.bookclub" qualified="false" references="true" stamp="1651741987805" textual="false" version="1.0"/>
+</session>
